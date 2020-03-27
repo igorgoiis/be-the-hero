@@ -22,6 +22,7 @@ export default function Incidents() {
   }
 
   async function loadIncidents() {
+
     if (loading) {
       return;
     }
@@ -58,13 +59,13 @@ export default function Incidents() {
       <Text style={styles.title} >Bem-vindo!</Text>
       <Text style={styles.description} >Escolha um dos casos abaixo e salve o dia.</Text>
 
-      <FlatList
+      <FlatList 
         data={incidents}
         style={styles.incidentList} 
         keyExtractor={incident => String(incident.id)}
         showsVerticalScrollIndicator={false}
         onEndReached={loadIncidents}
-        onEndReachedThreshold={0.2}
+        onEndReachedThreshold={0.4}
         renderItem={({ item: incident }) => (
           <View style={styles.incident} >
             <Text style={styles.incidentProperty} >ONG:</Text>
